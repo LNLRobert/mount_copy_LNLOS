@@ -40,9 +40,9 @@ if [ -z "$(ls $(echo "${mnt}/${PATTERN}"))" ]; then
     # NO FILES, WE EXPORT
     echo "Exporting..." >>/tmp/mountcopy.log
     # Copy files fitting $PATTERN from the $DESTINATION to the root of the drive.
-    mv $(echo "${DESTINATIONA}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
-    mv $(echo "${DESTINATIONB}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
-    mv $(echo "${DESTINATIONC}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
+    cp $(echo "${DESTINATIONA}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
+    cp $(echo "${DESTINATIONB}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
+    cp $(echo "${DESTINATIONC}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
 
 else
     # FILES FOUND, WE IMPORT

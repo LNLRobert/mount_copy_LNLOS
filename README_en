@@ -10,7 +10,7 @@ Function
 1. COPY - after inserting a USB Flash with a file or several "gcode" files
     will be copied to the print folder
    
-2. MOVE - after inserting an empty USB Flash, all files will be moved
+2. COPY - after inserting an empty USB Flash, all files will be copied to the usb drive
    "gcode" from the print folder
    
    

@@ -12,7 +12,7 @@ PATTERN="*.gcode"
 # For BIQU CB 1 module use
 DESTINATIONA="/home/biqu/printer_1_data/gcodes" 
 DESTINATIONB="/home/biqu/printer_2_data/gcodes" 
-DESTINATIONC="/home/biqu/printer_3_data/gcodes" 
+# DESTINATIONC="/home/biqu/printer_3_data/gcodes" 
 # =========
 
 
@@ -42,7 +42,7 @@ if [ -z "$(ls $(echo "${mnt}/${PATTERN}"))" ]; then
     # Copy files fitting $PATTERN from the $DESTINATION to the root of the drive.
     cp $(echo "${DESTINATIONA}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
     cp $(echo "${DESTINATIONB}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
-    cp $(echo "${DESTINATIONC}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
+    # cp $(echo "${DESTINATIONC}/${PATTERN}") "$mnt/" 2>>/tmp/mountcopy.log || exit 105
 
 else
     # FILES FOUND, WE IMPORT
@@ -50,7 +50,8 @@ else
     # Copy files fitting $PATTERN from the root of the drive to $DESTINATION.
     cp $(echo "$mnt/$PATTERN") "$DESTINATIONA/" 2>>/tmp/mountcopy.log || exit 102
     cp $(echo "$mnt/$PATTERN") "$DESTINATIONB/" 2>>/tmp/mountcopy.log || exit 102
-    cp $(echo "$mnt/$PATTERN") "$DESTINATIONC/" 2>>/tmp/mountcopy.log || exit 102
+    # cp $(echo "$mnt/$PATTERN") "$DESTINATIONC/" 2>>/tmp/mountcopy.log || exit 102
+
 fi
 
 # Unmount the drives filesystem
